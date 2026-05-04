@@ -335,10 +335,14 @@ document.addEventListener('DOMContentLoaded', () => {
     statObserver.observe(document.querySelector('.hero-stats'));
   }
 
-  // --- CONTACT FORM MOCK ---
+  // --- CONTACT FORM (FormSubmit.co) ---
   const contactForm = document.getElementById('contact-form');
   const formSuccess = document.getElementById('form-success');
   const submitBtn = document.getElementById('form-submit-btn');
+
+  // Set _next to current page so FormSubmit knows where to redirect (used as fallback)
+  const nextUrlInput = document.getElementById('form-next-url');
+  if (nextUrlInput) nextUrlInput.value = window.location.href;
 
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -350,21 +354,34 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.style.opacity = '0.7';
       submitBtn.style.pointerEvents = 'none';
       
-      // Simulate API call
-      setTimeout(() => {
-        formSuccess.classList.remove('hidden');
-        contactForm.reset();
-        
-        // Reset button
+      // Send via fetch to FormSubmit
+      const formData = new FormData(contactForm);
+      
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          formSuccess.classList.remove('hidden');
+          contactForm.reset();
+        } else {
+          alert('Something went wrong. Please try again or email directly.');
+        }
+      })
+      .catch(() => {
+        alert('Network error. Please try again or email directly.');
+      })
+      .finally(() => {
         submitBtn.querySelector('.btn-text').textContent = originalText;
         submitBtn.style.opacity = '1';
         submitBtn.style.pointerEvents = 'auto';
         
-        // Hide success message after 5s
         setTimeout(() => {
           formSuccess.classList.add('hidden');
         }, 5000);
-      }, 1500);
+      });
     });
   }
 
