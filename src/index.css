@@ -1451,6 +1451,15 @@ a {
     text-align: center;
   }
 
+  /* Fix grid overflows on mobile */
+  .about-card-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
   /* Fix for all containers/div z-index on phone like devices */
   .section, 
   .glass-card, 
