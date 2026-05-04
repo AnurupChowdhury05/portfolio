@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Futuristic Developer Portfolio — Full-Stack Engineer & AI Builder. Explore projects, skills, and more." />
+  <meta name="keywords" content="portfolio, developer, full-stack, AI, futuristic, web design" />
+  <meta property="og:title" content="Dev.Portfolio — Futuristic Engineer" />
+  <meta property="og:description" content="Next-generation developer portfolio with cutting-edge projects and skills." />
+  <title>DEV.PORTFOLIO — Futuristic Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursor-trail" class="cursor-trail"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Grid Overlay -->
+  <div class="grid-overlay"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>
+      <span class="logo-text">DEV</span>
+      <span class="logo-dot">.</span>
+      <span class="logo-sub">PORT</span>
+      <span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link" data-section="home">HOME</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">ABOUT</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">SKILLS</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">PROJECTS</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">CONTACT</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span class="status-text">AVAILABLE FOR HIRE</span>
+    </div>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <ul>
+      <li><a href="#home" class="mobile-link">HOME</a></li>
+      <li><a href="#about" class="mobile-link">ABOUT</a></li>
+      <li><a href="#skills" class="mobile-link">SKILLS</a></li>
+      <li><a href="#projects" class="mobile-link">PROJECTS</a></li>
+      <li><a href="#contact" class="mobile-link">CONTACT</a></li>
+    </ul>
+  </div>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="tag-line"></span>
+        <span id="hero-tag-text">FULL-STACK ENGINEER &amp; AI ARCHITECT</span>
+        <span class="tag-line"></span>
+      </div>
+      <h1 class="hero-name">
+        <span class="name-line">Anurup</span>
+        <span class="name-line accent">Chowdhury</span>
+      </h1>
+      <p class="hero-typewriter">
+        I build <span id="typewriter" class="typewriter-text"></span><span class="cursor-blink">|</span>
+      </p>
+      <p class="hero-desc">
+        Designing systems at the intersection of intelligence and engineering —<br/>
+        from scalable cloud architectures to adaptive AI pipelines.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary" id="hero-cta-primary">
+          <span class="btn-glow"></span>
+          <span class="btn-text">VIEW MY WORK</span>
+          <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-secondary" id="hero-cta-secondary">
+          <span class="btn-text">GET IN TOUCH</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num" data-target="5">0</span>
+          <span class="stat-label">PROJECTS</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="5">0</span>
+          <span class="stat-label">YEARS EXP.</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="12">0</span>
+          <span class="stat-label">CLIENTS</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-container">
+        <div class="avatar-ring ring-1"></div>
+        <div class="avatar-ring ring-2"></div>
+        <div class="avatar-ring ring-3"></div>
+        <div class="avatar-orb">
+          <img src="avatar.png" alt="Developer Avatar" class="avatar-img" />
+          <div class="avatar-scan"></div>
+        </div>
+        <div class="avatar-data">
+          <div class="data-node node-1">
+            <span class="node-label">REACT</span>
+          </div>
+          <div class="data-node node-2">
+            <span class="node-label">AI/ML</span>
+          </div>
+          <div class="data-node node-3">
+            <span class="node-label">NODE.JS</span>
+          </div>
+          <div class="data-node node-4">
+            <span class="node-label">CLOUD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="about section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">ABOUT ME</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p class="about-intro">
+          Hey — I'm <strong>Anurup Chowdhury</strong>, a full-stack engineer who lives at the edge of technology.
+        </p>
+        <p>
+          I architect and build intelligent systems — from high-performance APIs and real-time data pipelines
+          to AI-powered applications that actually make a difference. My philosophy is simple: <em>ship fast, think deeply, build to last.</em>
+        </p>
+        <p>
+          When I'm not writing code, I'm experimenting with language models, tinkering with embedded systems,
+          or sketching out the next big idea on a whiteboard.
+        </p>
+        <div class="about-badges">
+          <span class="badge">🛰️ Remote-First</span>
+          <span class="badge">⚡ Open Source</span>
+          <span class="badge">🤖 AI Enthusiast</span>
+          <span class="badge">🔐 Security Minded</span>
+        </div>
+      </div>
+      <div class="about-card-stack reveal">
+        <div class="info-card glass-card">
+          <div class="card-icon">📍</div>
+          <div>
+            <div class="card-label">LOCATION</div>
+            <div class="card-value">Kolkata,West Bengal,India</div>
+          </div>
+        </div>
+        <div class="info-card glass-card">
+          <div class="card-icon">🎓</div>
+          <div>
+            <div class="card-label">EDUCATION</div>
+            <div class="card-value">B.Tech Computer Science</div>
+          </div>
+        </div>
+        <div class="info-card glass-card">
+          <div class="card-icon">💼</div>
+          <div>
+            <div class="card-label">FOCUS</div>
+            <div class="card-value">Full-Stack + AI Systems</div>
+          </div>
+        </div>
+        <div class="info-card glass-card">
+          <div class="card-icon">🚀</div>
+          <div>
+            <div class="card-label">STACK</div>
+            <div class="card-value">React · Node · Python · GCP</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills" class="skills section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">TECH STACK</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="skills-tabs">
+      <button class="skill-tab active" data-tab="frontend" id="tab-frontend">FRONTEND</button>
+      <button class="skill-tab" data-tab="backend" id="tab-backend">BACKEND</button>
+      <button class="skill-tab" data-tab="ai" id="tab-ai">AI / ML</button>
+      <button class="skill-tab" data-tab="devops" id="tab-devops">DEVOPS</button>
+    </div>
+
+    <div class="skills-panels">
+      <div class="skills-panel active" id="panel-frontend">
+        <div class="skill-bars">
+          <div class="skill-bar reveal" data-skill="React / Next.js" data-level="95">
+            <div class="skill-info"><span>React / Next.js</span><span class="skill-pct">95%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:95%"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-skill="TypeScript" data-level="90">
+            <div class="skill-info"><span>TypeScript</span><span class="skill-pct">90%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:90%"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-skill="Three.js / WebGL" data-level="78">
+            <div class="skill-info"><span>Three.js / WebGL</span><span class="skill-pct">78%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:78%"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-skill="CSS / Animations" data-level="92">
+            <div class="skill-info"><span>CSS / Animations</span><span class="skill-pct">92%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:92%"></div></div>
+          </div>
+        </div>
+        <div class="tech-icons">
+          <div class="tech-icon" title="React"><span>⚛️</span><small>React</small></div>
+          <div class="tech-icon" title="Next.js"><span>▲</span><small>Next</small></div>
+          <div class="tech-icon" title="TypeScript"><span>TS</span><small>TypeScript</small></div>
+          <div class="tech-icon" title="Vue"><span>🟩</span><small>Vue</small></div>
+          <div class="tech-icon" title="Sass"><span>💅</span><small>Sass</small></div>
+          <div class="tech-icon" title="Framer"><span>🔷</span><small>Framer</small></div>
+        </div>
+      </div>
+
+      <div class="skills-panel" id="panel-backend">
+        <div class="skill-bars">
+          <div class="skill-bar reveal" data-skill="Node.js / Express" data-level="93">
+            <div class="skill-info"><span>Node.js / Express</span><span class="skill-pct">93%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:93%"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-skill="Python / FastAPI" data-level="88">
+            <div class="skill-info"><span>Python / FastAPI</span><span class="skill-pct">88%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:88%"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-skill="PostgreSQL / Redis" data-level="85">
+            <div class="skill-info"><span>PostgreSQL / Redis</span><span class="skill-pct">85%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:85%"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-skill="GraphQL / REST" data-level="90">
+            <div class="skill-info"><span>GraphQL / REST</span><span class="skill-pct">90%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:90%"></div></div>
+          </div>
+        </div>
+        <div class="tech-icons">
+          <div class="tech-icon" title="Node"><span>🟢</span><small>Node</small></div>
+          <div class="tech-icon" title="Python"><span>🐍</span><small>Python</small></div>
+          <div class="tech-icon" title="Postgres"><span>🐘</span><small>Postgres</small></div>
+          <div class="tech-icon" title="Redis"><span>🔴</span><small>Redis</small></div>
+          <div class="tech-icon" title="GraphQL"><span>◈</span><small>GraphQL</small></div>
+          <div class="tech-icon" title="Rust"><span>🦀</span><small>Rust</small></div>
+        </div>
+      </div>
+
+      <div class="skills-panel" id="panel-ai">
+        <div class="skill-bars">
+          <div class="skill-bar reveal" data-skill="LLM Integration (Gemini/GPT)" data-level="91">
+            <div class="skill-info"><span>LLM Integration</span><span class="skill-pct">91%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:91%"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-skill="PyTorch / TensorFlow" data-level="80">
+            <div class="skill-info"><span>PyTorch / TensorFlow</span><span class="skill-pct">80%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:80%"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-skill="Vector DBs / RAG" data-level="86">
+            <div class="skill-info"><span>Vector DBs / RAG</span><span class="skill-pct">86%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:86%"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-skill="Agents & Pipelines" data-level="88">
+            <div class="skill-info"><span>Agents & Pipelines</span><span class="skill-pct">88%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:88%"></div></div>
+          </div>
+        </div>
+        <div class="tech-icons">
+          <div class="tech-icon" title="OpenAI"><span>🤖</span><small>GPT-4</small></div>
+          <div class="tech-icon" title="Gemini"><span>✨</span><small>Gemini</small></div>
+          <div class="tech-icon" title="PyTorch"><span>🔥</span><small>PyTorch</small></div>
+          <div class="tech-icon" title="LangChain"><span>⛓️</span><small>LangChain</small></div>
+          <div class="tech-icon" title="Pinecone"><span>🌲</span><small>Pinecone</small></div>
+          <div class="tech-icon" title="Hugging Face"><span>🤗</span><small>HF</small></div>
+        </div>
+      </div>
+
+      <div class="skills-panel" id="panel-devops">
+        <div class="skill-bars">
+          <div class="skill-bar reveal" data-skill="Docker / Kubernetes" data-level="87">
+            <div class="skill-info"><span>Docker / Kubernetes</span><span class="skill-pct">87%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:87%"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-skill="GCP / AWS" data-level="84">
+            <div class="skill-info"><span>GCP / AWS</span><span class="skill-pct">84%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:84%"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-skill="CI/CD Pipelines" data-level="90">
+            <div class="skill-info"><span>CI/CD Pipelines</span><span class="skill-pct">90%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:90%"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-skill="Terraform / IaC" data-level="76">
+            <div class="skill-info"><span>Terraform / IaC</span><span class="skill-pct">76%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--level:76%"></div></div>
+          </div>
+        </div>
+        <div class="tech-icons">
+          <div class="tech-icon" title="Docker"><span>🐳</span><small>Docker</small></div>
+          <div class="tech-icon" title="K8s"><span>☸️</span><small>K8s</small></div>
+          <div class="tech-icon" title="GCP"><span>☁️</span><small>GCP</small></div>
+          <div class="tech-icon" title="GitHub Actions"><span>⚙️</span><small>Actions</small></div>
+          <div class="tech-icon" title="Terraform"><span>🔩</span><small>Terraform</small></div>
+          <div class="tech-icon" title="Linux"><span>🐧</span><small>Linux</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="projects section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">FEATURED PROJECTS</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- FEATURED: F.R.I.D.A.Y. AI Assistant -->
+      <div class="project-card glass-card featured reveal" id="project-friday">
+        <div class="project-badge">FEATURED</div>
+        <div class="project-preview">
+          <img src="projects/friday-assistant.png" alt="F.R.I.D.A.Y. AI Assistant" class="project-img" />
+        </div>
+        <div class="project-body">
+          <div class="project-top">
+            <div class="project-icon">🤖</div>
+            <div class="project-links">
+              <a href="#" class="proj-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
+              <a href="#" class="proj-link" aria-label="Live Demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+            </div>
+          </div>
+          <h3 class="project-title">F.R.I.D.A.Y. AI Assistant</h3>
+          <p class="project-desc">
+            Iron Man-inspired agentic AI assistant with LangGraph multi-agent orchestration,
+            real-time SSE streaming, voice interaction, and a cinematic HUD interface with
+            clap-to-wake dormant mode. Trilingual support (EN/HI/BN).
+          </p>
+          <div class="project-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">LangGraph</span>
+            <span class="tag">Gemini</span>
+            <span class="tag">Web Speech API</span>
+          </div>
+          <div class="project-metrics">
+            <div class="metric"><span class="metric-val">Multi-Agent</span><span class="metric-lbl">Orchestration</span></div>
+            <div class="metric"><span class="metric-val">Real-time</span><span class="metric-lbl">SSE Streaming</span></div>
+            <div class="metric"><span class="metric-val">3 Lang</span><span class="metric-lbl">Trilingual</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Workflow Builder -->
+      <div class="project-card glass-card reveal" id="project-workflow">
+        <div class="project-preview">
+          <img src="projects/workflow-builder.png" alt="AI Workflow Builder" class="project-img" />
+        </div>
+        <h3 class="project-title">AI Workflow Builder</h3>
+        <p class="project-desc">
+          Enterprise-grade visual AI orchestration platform with DAG-based execution engine,
+          AI Copilot, visual debugger, secrets vault, and a cyberpunk-themed interface.
+        </p>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">WebSocket</span>
+          <span class="tag">LangChain</span>
+        </div>
+      </div>
+
+      <!-- AI Interview Simulator -->
+      <div class="project-card glass-card reveal" id="project-interview">
+        <div class="project-preview">
+          <img src="projects/interview-simulator.png" alt="AI Interview Simulator" class="project-img" />
+        </div>
+        <h3 class="project-title">AI Interview Simulator</h3>
+        <p class="project-desc">
+          FAANG-level AI interview platform with system design whiteboard, AST-based
+          code profiling, resume RAG, and real-time performance analytics.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Gemini</span>
+        </div>
+      </div>
+
+      <!-- Sign Language Translator -->
+      <div class="project-card glass-card reveal" id="project-signlang">
+        <div class="project-preview">
+          <img src="projects/sign-language.png" alt="Sign Language Translator" class="project-img" />
+        </div>
+        <h3 class="project-title">Sign Language Translator</h3>
+        <p class="project-desc">
+          Real-time sign language recognition system using computer vision and deep learning.
+          Webcam-based gesture detection with live text translation output.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">TensorFlow</span>
+          <span class="tag">MediaPipe</span>
+        </div>
+      </div>
+
+      <!-- Fingerprint Voting System -->
+      <div class="project-card glass-card reveal" id="project-voting">
+        <div class="project-preview">
+          <img src="projects/fingerprint-voting.png" alt="Fingerprint Voting System" class="project-img" />
+        </div>
+        <h3 class="project-title">Fingerprint Voting System</h3>
+        <p class="project-desc">
+          Secure biometric voting platform with fingerprint authentication,
+          tamper-proof ballot submission, real-time election analytics, and admin dashboard.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Biometrics</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">Flask</span>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="projects-cta">
+      <a href="#" class="btn btn-secondary" id="all-projects-btn">VIEW ALL PROJECTS →</a>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="contact section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">GET IN TOUCH</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3 class="contact-heading">Let's build something <span class="accent">extraordinary</span>.</h3>
+        <p class="contact-sub">
+          Whether you have a project in mind, want to collaborate, or just want to talk tech —
+          I'm always open. Drop a message and I'll respond within 24 hours.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:alex@nova.dev" class="contact-link" id="contact-email">
+            <div class="contact-link-icon">✉️</div>
+            <div>
+              <div class="contact-link-label">EMAIL</div>
+              <div class="contact-link-val">alex@nova.dev</div>
+            </div>
+          </a>
+          <a href="#" class="contact-link" id="contact-github">
+            <div class="contact-link-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </div>
+            <div>
+              <div class="contact-link-label">GITHUB</div>
+              <div class="contact-link-val">github.com/alexnova</div>
+            </div>
+          </a>
+          <a href="#" class="contact-link" id="contact-linkedin">
+            <div class="contact-link-icon">💼</div>
+            <div>
+              <div class="contact-link-label">LINKEDIN</div>
+              <div class="contact-link-val">linkedin.com/in/alexnova</div>
+            </div>
+          </a>
+          <a href="#" class="contact-link" id="contact-twitter">
+            <div class="contact-link-icon">𝕏</div>
+            <div>
+              <div class="contact-link-label">TWITTER / X</div>
+              <div class="contact-link-val">@alexnova_dev</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form glass-card reveal" id="contact-form">
+        <div class="form-group">
+          <label for="cf-name" class="form-label">YOUR NAME</label>
+          <input type="text" id="cf-name" class="form-input" placeholder="John Doe" required />
+        </div>
+        <div class="form-group">
+          <label for="cf-email" class="form-label">EMAIL ADDRESS</label>
+          <input type="email" id="cf-email" class="form-input" placeholder="you@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="cf-subject" class="form-label">SUBJECT</label>
+          <input type="text" id="cf-subject" class="form-input" placeholder="Project Collaboration" />
+        </div>
+        <div class="form-group">
+          <label for="cf-message" class="form-label">MESSAGE</label>
+          <textarea id="cf-message" class="form-input form-textarea" placeholder="Tell me about your project..." rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary full-width" id="form-submit-btn">
+          <span class="btn-glow"></span>
+          <span class="btn-text">SEND MESSAGE</span>
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+        </button>
+        <div id="form-success" class="form-success hidden">
+          <span>✅ Message sent! I'll respond within 24h.</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">ANURUP</span>
+        <span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-copy">© 2026 Anurup Chowdhury · Designed & Built with ☕ and 💻</p>
+      <div class="footer-socials">
+        <a href="#" class="social-btn" aria-label="GitHub" id="footer-github">GH</a>
+        <a href="#" class="social-btn" aria-label="LinkedIn" id="footer-linkedin">LI</a>
+        <a href="#" class="social-btn" aria-label="Twitter" id="footer-twitter">X</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
