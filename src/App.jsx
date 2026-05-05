@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -8,8 +8,13 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import ParticleCanvas from './components/ParticleCanvas';
+import BootScreen from './components/BootScreen';
+import ResumeModal from './components/ResumeModal';
 
 function App() {
+  const [isBooting, setIsBooting] = useState(true);
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
   useEffect(() => {
     // --- SCROLL REVEAL (INTERSECTION OBSERVER) ---
     const revealElements = document.querySelectorAll('.reveal');
@@ -44,11 +49,14 @@ function App() {
 
   return (
     <>
+      {isBooting && <BootScreen onComplete={() => setIsBooting(false)} />}
       <CustomCursor />
       <ParticleCanvas />
       <div className="grid-overlay"></div>
       
-      <Navbar />
+      <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
+      
+      <Navbar onOpenResume={() => setIsResumeOpen(true)} />
       
       <main>
         <Hero />

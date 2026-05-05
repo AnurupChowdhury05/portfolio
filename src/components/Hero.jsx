@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from 'react';
+import { useTilt } from '../hooks/useTilt';
 
 const Hero = () => {
   const typewriterRef = useRef(null);
   const statsRef = useRef(null);
   const statNumsRef = useRef([]);
+  const tiltRef = useTilt({ max: 20, scale: 1.05, speed: 600 });
 
   useEffect(() => {
     // Typewriter effect
@@ -137,7 +139,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="hero-visual">
-        <div className="avatar-container">
+        <div className="avatar-container" ref={tiltRef}>
           <div className="avatar-ring ring-1"></div>
           <div className="avatar-ring ring-2"></div>
           <div className="avatar-ring ring-3"></div>

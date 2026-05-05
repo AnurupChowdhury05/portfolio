@@ -1,4 +1,5 @@
 import React from 'react';
+import TerminalFeed from './TerminalFeed';
 
 const About = () => {
   return (
@@ -58,6 +59,11 @@ const About = () => {
             </div>
           </div>
         </div>
+      </div>
+      
+      {/* Terminal Feed integrated into the About section */}
+      <div style={{ marginTop: '3rem' }}>
+        <TerminalFeed />
       </div>
     </section>
   );

@@ -1,4 +1,15 @@
 import React from 'react';
+import { useTilt } from '../hooks/useTilt';
+
+const TiltCard = ({ children, className, id }) => {
+  const tiltRef = useTilt({ max: 8, scale: 1.02, speed: 500 });
+  
+  return (
+    <div ref={tiltRef} className={className} id={id}>
+      {children}
+    </div>
+  );
+};
 
 const Projects = () => {
   return (
@@ -12,7 +23,7 @@ const Projects = () => {
       <div className="projects-grid">
 
         {/* FEATURED: F.R.I.D.A.Y. AI Assistant */}
-        <div className="project-card glass-card featured reveal" id="project-friday">
+        <TiltCard className="project-card glass-card featured reveal" id="project-friday">
           <div className="project-badge">FEATURED</div>
           <div className="project-preview">
             <img src={`${import.meta.env.BASE_URL}projects/friday-assistant.png`} alt="F.R.I.D.A.Y. AI Assistant" className="project-img" />
@@ -44,10 +55,10 @@ const Projects = () => {
               <div className="metric"><span className="metric-val">3 Lang</span><span className="metric-lbl">Trilingual</span></div>
             </div>
           </div>
-        </div>
+        </TiltCard>
 
         {/* AI Workflow Builder */}
-        <div className="project-card glass-card reveal" id="project-workflow">
+        <TiltCard className="project-card glass-card reveal" id="project-workflow">
           <div className="project-preview">
             <img src={`${import.meta.env.BASE_URL}projects/workflow-builder.png`} alt="AI Workflow Builder" className="project-img" />
           </div>
@@ -62,10 +73,10 @@ const Projects = () => {
             <span className="tag">WebSocket</span>
             <span className="tag">LangChain</span>
           </div>
-        </div>
+        </TiltCard>
 
         {/* AI Interview Simulator */}
-        <div className="project-card glass-card reveal" id="project-interview">
+        <TiltCard className="project-card glass-card reveal" id="project-interview">
           <div className="project-preview">
             <img src={`${import.meta.env.BASE_URL}projects/interview-simulator.png`} alt="AI Interview Simulator" className="project-img" />
           </div>
@@ -80,10 +91,10 @@ const Projects = () => {
             <span className="tag">MongoDB</span>
             <span className="tag">Gemini</span>
           </div>
-        </div>
+        </TiltCard>
 
         {/* Sign Language Translator */}
-        <div className="project-card glass-card reveal" id="project-signlang">
+        <TiltCard className="project-card glass-card reveal" id="project-signlang">
           <div className="project-preview">
             <img src={`${import.meta.env.BASE_URL}projects/sign-language.png`} alt="Sign Language Translator" className="project-img" />
           </div>
@@ -98,10 +109,10 @@ const Projects = () => {
             <span className="tag">TensorFlow</span>
             <span className="tag">MediaPipe</span>
           </div>
-        </div>
+        </TiltCard>
 
         {/* Fingerprint Voting System */}
-        <div className="project-card glass-card reveal" id="project-voting">
+        <TiltCard className="project-card glass-card reveal" id="project-voting">
           <div className="project-preview">
             <img src={`${import.meta.env.BASE_URL}projects/fingerprint-voting.png`} alt="Fingerprint Voting System" className="project-img" />
           </div>
@@ -116,7 +127,7 @@ const Projects = () => {
             <span className="tag">SQLite</span>
             <span className="tag">Flask</span>
           </div>
-        </div>
+        </TiltCard>
 
       </div>
 

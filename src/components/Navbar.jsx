@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Navbar = () => {
+const Navbar = ({ onOpenResume }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,9 +51,15 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <div className="nav-status">
-          <span className="status-dot"></span>
-          <span className="status-text">AVAILABLE FOR HIRE</span>
+        <div className="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+          <div className="nav-status">
+            <span className="status-dot"></span>
+            <span className="status-text">AVAILABLE FOR HIRE</span>
+          </div>
+          <button className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '0.8rem' }} onClick={onOpenResume}>
+            <span className="btn-glow"></span>
+            <span className="btn-text">RESUME</span>
+          </button>
         </div>
         <button 
           id="menu-toggle" 
@@ -80,6 +86,12 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+          <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
+            <button className="btn btn-primary" onClick={() => { onOpenResume(); toggleMenu(); }}>
+              <span className="btn-glow"></span>
+              <span className="btn-text">INTERACTIVE RESUME</span>
+            </button>
+          </div>
         </div>
       </nav>
     </>

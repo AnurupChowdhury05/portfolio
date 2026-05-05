@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { playHoverSound, playClickSound } from '../utils/sounds';
 
 const CustomCursor = () => {
   const cursorRef = useRef(null);
@@ -25,26 +26,35 @@ const CustomCursor = () => {
 
       // We'll use event delegation for hover effects rather than adding listeners to all elements
       const handleMouseOver = (e) => {
-        if (e.target.closest('a, button, .skill-tab, .proj-link')) {
+        if (e.target.closest('a, button, .skill-tab, .proj-link, .project-card, .info-card')) {
           cursor?.classList.add('hovered');
           cursorTrail?.classList.add('hovered');
+          playHoverSound();
         }
       };
 
       const handleMouseOut = (e) => {
-        if (e.target.closest('a, button, .skill-tab, .proj-link')) {
+        if (e.target.closest('a, button, .skill-tab, .proj-link, .project-card, .info-card')) {
           cursor?.classList.remove('hovered');
           cursorTrail?.classList.remove('hovered');
         }
       };
 
+      const handleGlobalClick = (e) => {
+        if (e.target.closest('a, button, .skill-tab, .proj-link, .project-card, .info-card')) {
+          playClickSound();
+        }
+      };
+
       document.addEventListener('mouseover', handleMouseOver);
       document.addEventListener('mouseout', handleMouseOut);
+      document.addEventListener('click', handleGlobalClick);
 
       return () => {
         document.removeEventListener('mousemove', moveCursor);
         document.removeEventListener('mouseover', handleMouseOver);
         document.removeEventListener('mouseout', handleMouseOut);
+        document.removeEventListener('click', handleGlobalClick);
       };
     } else {
       if (cursor && cursorTrail) {
