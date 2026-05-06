@@ -1855,6 +1855,11 @@ body.override-mode .flashlight-overlay {
     justify-content: center;
   }
 
+  .project-card.featured .project-metrics {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
   .contact-link-val {
     word-break: break-word;
     font-size: 0.9rem;
@@ -1867,6 +1872,9 @@ body.override-mode .flashlight-overlay {
 
   .glass-card {
     padding: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .contact-form.glass-card {
