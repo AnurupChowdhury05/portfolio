@@ -67,11 +67,12 @@ const Hero = () => {
           
           const updateCounter = () => {
             current += increment;
+            const suffix = stat.getAttribute('data-suffix') || '';
             if (current < target) {
-              stat.innerText = Math.ceil(current);
+              stat.innerText = Math.ceil(current) + suffix;
               requestAnimationFrame(updateCounter);
             } else {
-              stat.innerText = target; 
+              stat.innerText = target + suffix; 
             }
           };
           updateCounter();
@@ -123,8 +124,18 @@ const Hero = () => {
         </div>
         <div className="hero-stats" ref={statsRef}>
           <div className="stat-item">
-            <span className="stat-num" data-target="5" ref={el => statNumsRef.current[0] = el}>0</span>
+            <span className="stat-num" data-target="15" data-suffix="+" ref={el => statNumsRef.current[0] = el}>0</span>
+            <span className="stat-label">TECHNOLOGIES</span>
+          </div>
+          <div className="stat-divider"></div>
+          <div className="stat-item">
+            <span className="stat-num" data-target="5" ref={el => statNumsRef.current[1] = el}>0</span>
             <span className="stat-label">FEATURED PROJECTS</span>
+          </div>
+          <div className="stat-divider"></div>
+          <div className="stat-item">
+            <span className="stat-num" data-target="500" data-suffix="+" ref={el => statNumsRef.current[2] = el}>0</span>
+            <span className="stat-label">GITHUB COMMITS</span>
           </div>
         </div>
       </div>
