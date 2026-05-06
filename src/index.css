@@ -1852,8 +1852,14 @@ body.override-mode .flashlight-overlay {
     justify-content: center;
   }
 
-  .contact-item {
+  .contact-link-val {
     word-break: break-word;
+    font-size: 0.9rem;
+  }
+
+  .contact-link {
+    gap: 1rem;
+    padding: 0.8rem;
   }
 
   .section {
