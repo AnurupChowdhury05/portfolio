@@ -1247,6 +1247,9 @@ a {
   font-size: 1rem;
   outline: none;
   transition: 0.3s;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .form-input:focus {
@@ -1867,7 +1870,10 @@ body.override-mode .flashlight-overlay {
   }
 
   .contact-form.glass-card {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .resume-header {
