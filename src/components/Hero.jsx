@@ -124,17 +124,7 @@ const Hero = () => {
         <div className="hero-stats" ref={statsRef}>
           <div className="stat-item">
             <span className="stat-num" data-target="5" ref={el => statNumsRef.current[0] = el}>0</span>
-            <span className="stat-label">PROJECTS</span>
-          </div>
-          <div className="stat-divider"></div>
-          <div className="stat-item">
-            <span className="stat-num" data-target="5" ref={el => statNumsRef.current[1] = el}>0</span>
-            <span className="stat-label">YEARS EXP.</span>
-          </div>
-          <div className="stat-divider"></div>
-          <div className="stat-item">
-            <span className="stat-num" data-target="12" ref={el => statNumsRef.current[2] = el}>0</span>
-            <span className="stat-label">CLIENTS</span>
+            <span className="stat-label">FEATURED PROJECTS</span>
           </div>
         </div>
       </div>
